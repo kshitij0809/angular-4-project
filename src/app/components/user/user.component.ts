@@ -30,7 +30,31 @@ export class UserComponent implements OnInit {
    
   }
 
- 
+  onClick(){
+    this.name='Brad Traversy';
+    this.hobbies.push('New Hobby');
+  }
 
+  addHobby(hobby){
+    console.log(hobby);
+    this.hobbies.unshift(hobby);
+    return false;
+  }
+
+  deleteHobby(i){
+    this.hobbies.splice(i, 1);
+  }
+
+  toggleEdit(){
+    this.isEdit = !this.isEdit;
+  }
+
+}
+
+
+interface Address{
+  street:string,
+  city:string,
+  state:string
 }
 
